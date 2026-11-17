@@ -1,0 +1,22 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { bookingHref, siteConfig } from "@/site.config";
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false); const pathname = usePathname();
+  useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [open]);
+  return <header className="site-header">
+    <div className="container nav-wrap">
+      <Link href="/" className="brand" aria-label="Digital Nisal home"><span>DN</span><strong>Digital Nisal</strong></Link>
+      <nav className="desktop-nav" aria-label="Main navigation">
+        {siteConfig.navigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
+      </nav>
+      <Link className="button button-small desktop-cta" href={bookingHref}>Book a Free Consultation Call <ArrowUpRight size={17}/></Link>
+      <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"}>{open ? <X/> : <Menu/>}</button>
+    </div>
+    {open && <div id="mobile-navigation" className="mobile-panel"><nav aria-label="Mobile navigation">{siteConfig.navigation.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}<Link className="button" href={bookingHref} onClick={() => setOpen(false)}>Book a Free Consultation Call</Link></nav></div>}
+  </header>;
+}

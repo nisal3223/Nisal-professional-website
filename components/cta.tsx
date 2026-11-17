@@ -1,0 +1,3 @@
+import Link from "next/link"; import { ArrowRight } from "lucide-react";
+import { bookingHref, siteConfig } from "@/site.config";
+export function ConsultationCta({ compact = false }: { compact?: boolean }) { return <section className={compact ? "cta cta-compact" : "cta section"}><div className="container cta-inner"><div><p className="eyebrow">A useful first conversation</p><h2>Turn your marketing questions into a practical next step.</h2><p>{siteConfig.consultationOffer}</p></div><Link className="button button-light" href={bookingHref}>Book a Free Consultation Call <ArrowRight size={18}/></Link></div></section>; }
