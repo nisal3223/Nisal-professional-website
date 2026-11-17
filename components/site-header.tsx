@@ -9,7 +9,7 @@ export function SiteHeader() {
   useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [open]);
   return <header className="site-header">
     <div className="container nav-wrap">
-      <a href="/" className="brand" aria-label="Digital Nisal home"><span>DN</span><strong>Digital Nisal</strong></a>
+      <a href="/" className="brand" aria-label="Digital Nisal home"><img className="brand-logo" src="/digital-nisal-logo.png" alt="Digital Nisal" width="2048" height="768"/></a>
       <nav className="desktop-nav" aria-label="Main navigation">
         {siteConfig.navigation.map((item) => <a key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</a>)}
       </nav>
