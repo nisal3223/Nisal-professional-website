@@ -1,14 +1,75 @@
 export type Service = {
-  slug: string; title: string; summary: string; problem: string;
-  activities: string[]; goal: string; icon: string;
+  slug: string;
+  title: string;
+  summary: string;
+  problem: string;
+  activities: string[];
+  goal: string;
+  icon: string;
 };
 
 export const services: Service[] = [
-  { slug: "ai-marketing-strategy", title: "AI-Powered Marketing Strategy", icon: "Compass", summary: "A focused roadmap that connects the right channels and AI tools to your real business priorities.", problem: "Marketing activity feels scattered, reactive, or disconnected from commercial goals.", activities: ["Business, audience, and channel review", "Priority roadmap and campaign planning", "Practical AI opportunities and guardrails"], goal: "Create a clear, realistic direction for customer acquisition and sustainable improvement." },
-  { slug: "seo-content", title: "SEO & Content Strategy", icon: "Search", summary: "Useful content and search foundations that help the right people discover your business.", problem: "Your website is hard to find, or content takes effort without attracting relevant visitors.", activities: ["Search intent and topic research", "On-page and technical recommendations", "Editorial plans and content briefs"], goal: "Build discoverability and trust with content designed around genuine customer questions." },
-  { slug: "social-media", title: "Social Media Marketing", icon: "MessagesSquare", summary: "A purposeful social presence built around consistent, relevant communication—not constant posting.", problem: "Social activity is inconsistent, time-consuming, or unclear in its role within the wider marketing plan.", activities: ["Channel and audience priorities", "Content pillars and publishing plans", "Campaign concepts and performance reviews"], goal: "Strengthen awareness, engagement, and the path from attention to inquiry." },
-  { slug: "paid-advertising", title: "Paid Advertising", icon: "Target", summary: "Campaign strategy and management focused on reaching qualified audiences and learning efficiently.", problem: "Ad spend is difficult to evaluate, targeting lacks focus, or campaigns are not producing useful insight.", activities: ["Campaign structure and audience planning", "Creative and landing-page recommendations", "Budget allocation and ongoing optimization"], goal: "Use paid media deliberately to support demand generation, testing, and customer acquisition." },
-  { slug: "email-automation", title: "Email & Marketing Automation", icon: "Mail", summary: "Helpful, timely communication that nurtures leads and reduces repetitive marketing work.", problem: "Prospects go cold, follow-up is manual, or customer communication is inconsistent.", activities: ["Lifecycle and sequence mapping", "Email campaign planning and copy direction", "Automation setup and quality checks"], goal: "Create reliable follow-up experiences that support relationships and sales conversations." },
-  { slug: "ai-workflows", title: "AI Tools & Workflow Implementation", icon: "Workflow", summary: "Carefully selected AI tools and repeatable workflows that make marketing work more efficient.", problem: "The AI landscape feels overwhelming, or tools have been adopted without a useful process behind them.", activities: ["Use-case and tool evaluation", "Workflow design and prompt systems", "Team guidance, review steps, and documentation"], goal: "Save time and improve consistency while keeping human judgment and brand quality in control." },
-  { slug: "conversion-analysis", title: "Conversion & Performance Analysis", icon: "ChartNoAxesCombined", summary: "A clearer view of what helps visitors take action—and what deserves attention next.", problem: "Traffic and campaign data exist, but decisions are still based on guesswork.", activities: ["Customer journey and conversion review", "Measurement plan and dashboard recommendations", "Experiment ideas and performance analysis"], goal: "Turn marketing signals into informed priorities and steadily improve the customer journey." },
+  {
+    slug: "ai-marketing-strategy",
+    title: "AI-Powered Marketing Strategy",
+    icon: "Compass",
+    summary: "A clear marketing plan focused on the right customers, channels, and AI tools.",
+    problem: "Your marketing feels scattered, and you are unsure what to prioritize.",
+    activities: ["Review your business, audience, and current marketing", "Set clear priorities and campaign goals", "Choose practical AI opportunities"],
+    goal: "Give your business a focused direction and a plan you can act on.",
+  },
+  {
+    slug: "seo-content",
+    title: "SEO & Content Strategy",
+    icon: "Search",
+    summary: "Help the right people find your business through useful search-focused content.",
+    problem: "Your website is difficult to find, or your content is not attracting the right visitors.",
+    activities: ["Research customer searches and questions", "Improve important website pages", "Plan useful content and topics"],
+    goal: "Increase visibility and build trust with potential customers.",
+  },
+  {
+    slug: "social-media",
+    title: "Social Media Marketing",
+    icon: "MessagesSquare",
+    summary: "Create a consistent social presence with content that supports your business goals.",
+    problem: "Posting takes time, feels inconsistent, or does not lead anywhere useful.",
+    activities: ["Choose the right social channels", "Create content themes and a posting plan", "Review what your audience responds to"],
+    goal: "Build awareness and guide interested people toward your business.",
+  },
+  {
+    slug: "paid-advertising",
+    title: "Paid Advertising",
+    icon: "Target",
+    summary: "Reach relevant audiences with focused campaigns and better use of your ad budget.",
+    problem: "Your ads lack clear targeting, useful measurement, or a strong path to inquiry.",
+    activities: ["Plan audiences and campaign structure", "Improve messages and landing pages", "Review spending and campaign performance"],
+    goal: "Use paid advertising to create demand, test ideas, and attract qualified interest.",
+  },
+  {
+    slug: "email-automation",
+    title: "Email & Marketing Automation",
+    icon: "Mail",
+    summary: "Follow up with leads and customers using helpful, timely email communication.",
+    problem: "Leads go cold, follow-up is manual, or customer communication is inconsistent.",
+    activities: ["Plan email sequences", "Create campaign and message direction", "Set up and check useful automations"],
+    goal: "Build stronger follow-up without adding more repetitive work.",
+  },
+  {
+    slug: "ai-workflows",
+    title: "AI Tools & Workflow Implementation",
+    icon: "Workflow",
+    summary: "Use the right AI tools to make everyday marketing work faster and more consistent.",
+    problem: "AI feels overwhelming, or your current tools do not fit into a clear process.",
+    activities: ["Choose useful tools for specific tasks", "Build repeatable workflows and prompts", "Add simple review steps and guidance"],
+    goal: "Save time while keeping your quality, judgment, and brand voice in control.",
+  },
+  {
+    slug: "conversion-analysis",
+    title: "Conversion & Performance Analysis",
+    icon: "ChartNoAxesCombined",
+    summary: "Understand what is working and where customers are dropping away.",
+    problem: "You have marketing data, but it is not helping you make clear decisions.",
+    activities: ["Review the customer journey", "Choose useful marketing measures", "Identify practical tests and improvements"],
+    goal: "Turn marketing data into better priorities and steady improvement.",
+  },
 ];
