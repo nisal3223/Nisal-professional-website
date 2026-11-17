@@ -5,6 +5,11 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    // The deployed Vinext compatibility runtime currently fails during
+    // next/link client navigation. Plain anchors provide reliable navigation.
+    rules: { "@next/next/no-html-link-for-pages": "off" },
+  },
   globalIgnores([
     "dist/**",
     ".vinext/**",

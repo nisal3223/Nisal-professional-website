@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
@@ -10,13 +9,13 @@ export function SiteHeader() {
   useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [open]);
   return <header className="site-header">
     <div className="container nav-wrap">
-      <Link href="/" className="brand" aria-label="Digital Nisal home"><span>DN</span><strong>Digital Nisal</strong></Link>
+      <a href="/" className="brand" aria-label="Digital Nisal home"><span>DN</span><strong>Digital Nisal</strong></a>
       <nav className="desktop-nav" aria-label="Main navigation">
-        {siteConfig.navigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
+        {siteConfig.navigation.map((item) => <a key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</a>)}
       </nav>
-      <Link className="button button-small desktop-cta" href={bookingHref}>Book a Free Consultation Call <ArrowUpRight size={17}/></Link>
+      <a className="button button-small desktop-cta" href={bookingHref}>Book a Free Consultation Call <ArrowUpRight size={17}/></a>
       <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"}>{open ? <X/> : <Menu/>}</button>
     </div>
-    {open && <div id="mobile-navigation" className="mobile-panel"><nav aria-label="Mobile navigation">{siteConfig.navigation.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}<Link className="button" href={bookingHref} onClick={() => setOpen(false)}>Book a Free Consultation Call</Link></nav></div>}
+    {open && <div id="mobile-navigation" className="mobile-panel"><nav aria-label="Mobile navigation">{siteConfig.navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setOpen(false)} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</a>)}<a className="button" href={bookingHref} onClick={() => setOpen(false)}>Book a Free Consultation Call</a></nav></div>}
   </header>;
 }
