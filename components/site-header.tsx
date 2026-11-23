@@ -7,6 +7,15 @@ import { bookingHref, siteConfig } from "@/site.config";
 export function SiteHeader() {
   const [open, setOpen] = useState(false); const pathname = usePathname();
   useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [open]);
+  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
   return <header className="site-header">
     <div className="container nav-wrap">
       <a href="/" className="brand" aria-label="Digital Nisal home"><img className="brand-logo" src="/digital-nisal-logo.png" alt="Digital Nisal" width="2048" height="768"/></a>
